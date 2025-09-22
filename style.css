@@ -1,0 +1,133 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{font-size: 112.5%;}
+
+body{
+    animation: bgAnimate 6s ease-in-out infinite alternate;
+}
+
+.header{
+    text-align: center;
+}
+
+.header h1{
+   position: relative;
+   margin-bottom: 1rem;
+}
+
+.header h1::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: radial-gradient(ellipse, #b2aa67, #7d7cb3, #7db38b);
+    width: 150px;
+    height: 8px;
+    border-radius: 50px;
+    transform: translate(9.4rem, 2.7rem);
+}
+
+@keyframes bgAnimate{
+    0% {
+        background: #FAF1E6;
+    }
+    25% {
+        background: #FDFAF6;
+    }
+    100% {
+        background: #E4EFE7;
+    }
+}
+
+main{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    place-content: center;
+    align-items: center;
+}
+
+.palettes{
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.color{
+    width: 200px;
+    height: 300px;
+    border-radius: 50px;
+    margin: 2rem 0px;
+    cursor: pointer;
+    transition: .5s ease all;
+}
+
+.color:hover{
+    transform: translateY(-8px);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.5);
+}
+
+.color-code{
+    padding: 1rem;
+    cursor: pointer;
+    border-radius: 50px;
+    border: 1px solid black;
+    display: flex;
+    gap: .5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.color-code:hover{
+    border: #64748b 1px solid;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.5);
+}
+
+.copy-btn{
+    cursor: pointer;
+    color: #64748b;
+    transition: color .2s;
+}
+
+.generate-palette{
+    border: none;
+    padding: 1rem;
+    margin: 2rem 0px 0px;
+    border-radius: 50px;
+    cursor: pointer;
+    position: relative;
+    box-shadow: 0 6px 10px rgba(0,0,0,0.5);
+    transition: .2s ease all;
+    background: linear-gradient(to left, #8af5d2, #2cedae);
+}
+
+.generate-palette:hover{
+    transform: translateY(-3px);
+}
+
+.generate-palette:active{
+    transform: translateY(0px);
+}
+
+@media (max-width: 90em){
+    .palettes{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .color{
+        width: 100%;
+        height: 400px;
+    }
+    .header h1::after{
+        transform: translate(9.4rem, 2.7rem);
+    }
+}
